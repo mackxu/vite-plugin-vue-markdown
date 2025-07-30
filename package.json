@@ -1,0 +1,37 @@
+{
+  "name": "vite-plugin-markdown",
+  "private": false,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "plugin"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build",
+    "build": "npx tsup"
+  },
+  "dependencies": {
+    "vue": "^3.5.17"
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vue/tsconfig": "^0.7.0",
+    "tsup": "^8.5.0",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.4",
+    "vue-tsc": "^2.2.12"
+  }
+}
