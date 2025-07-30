@@ -16,6 +16,10 @@
     "dist",
     "plugin"
   ],
+  "keywords": [
+    "vite-plugin",
+    "markdown"
+  ],
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
@@ -23,7 +27,8 @@
     "build": "npx tsup"
   },
   "dependencies": {
-    "vue": "^3.5.17"
+    "highlight.js": "^11.11.1",
+    "markdown-it": "^14.1.0"
   },
   "devDependencies": {
     "@types/node": "^24.1.0",
@@ -32,6 +37,7 @@
     "tsup": "^8.5.0",
     "typescript": "~5.8.3",
     "vite": "^7.0.4",
+    "vue": "^3.5.18",
     "vue-tsc": "^2.2.12"
   }
 }
