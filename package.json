@@ -1,5 +1,5 @@
 {
-  "name": "vite-plugin-markdown",
+  "name": "vite-plugin-vue-markdown-vue",
   "private": false,
   "version": "0.0.1",
   "type": "module",
@@ -28,7 +28,6 @@
   },
   "dependencies": {
     "@types/markdown-it": "^14.1.2",
-    "highlight.js": "^11.11.1",
     "markdown-it": "^14.1.0",
     "markdown-it-async": "^2.2.0",
     "shiki": "^3.9.0"
