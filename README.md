@@ -1,5 +1,7 @@
 # vite-plugin-vue-markdown-vue
 
+把 markdown 文档导出 vue 组件使用
+
 ## 安装
 
 ```bash
@@ -15,8 +17,31 @@ import vue from '@vitejs/plugin-vue';
 import { markdownPlugin } from 'vite-plugin-vue-markdown-vue';
 
 export default defineConfig({
-  plugins: [vue(), markdownPlugin()],
+  plugins: [vue({ include: [/\.vue$/, /\.md$/] }), markdownPlugin()],
 });
+```
+
+## 示例
+
+```vue
+<template>
+  <MyMarkdown />
+</template>
+
+<script setup lang="ts">
+import MyMarkdown from './md/aaa.md';
+</script>
+```
+
+## ts 声明
+
+```ts
+declare module '*.md' {
+  import type { ComponentOptions } from 'vue';
+
+  const Component: ComponentOptions;
+  export default Component;
+}
 ```
 
 ## 插件开发
