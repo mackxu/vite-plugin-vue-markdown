@@ -1,5 +1,7 @@
 # test
 
-## aaa
+```javascript
+import { ref } from 'vue';
 
-### bbb
+const msg = ref('hello world');
+```

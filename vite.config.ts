@@ -4,5 +4,5 @@ import { markdownPlugin } from './plugin';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue(), markdownPlugin()],
+  plugins: [vue({ include: [/\.vue$/, /\.md$/] }), markdownPlugin({ theme: 'vitesse-light' })],
 });

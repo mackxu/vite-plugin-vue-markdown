@@ -1,21 +1,20 @@
-import MarkdownIt from 'markdown-it';
-import hljs from 'highlight.js';
+import type { MarkdownPluginOptions } from './types';
 
-export default new MarkdownIt({
-  highlight: function (str: string, lang: string) {
-    if (lang && hljs.getLanguage(lang)) {
-      try {
-        // md中代码块需要包裹标签，否则会报错，所以需要替换掉{}
-        const code = hljs
-          .highlight(str, { language: lang })
-          .value.replaceAll(/{/g, '&#123;')
-          .replaceAll(/}/g, '&#125;')
-          .replaceAll(/\n/g, '<br />');
-        return code;
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    return ''; // use external default escaping
-  },
-});
+export function transformMarkdown(options: MarkdownPluginOptions) {
+  const setupPromise = (async () => {
+    const { default: MarkdownIt } = await import('markdown-it-async');
+    const md = MarkdownIt({
+      async highlight(code, lang) {
+        const { codeToHtml } = await import('shiki');
+        return await codeToHtml(code, { lang, theme: options.theme || 'vitesse-dark' });
+      },
+    });
+    return md;
+  })();
+
+  return async (code: string) => {
+    const md = await setupPromise;
+    const html = await md.renderAsync(code);
+    return `<template>${html}</template>`;
+  };
+}

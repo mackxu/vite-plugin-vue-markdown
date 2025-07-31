@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue';
+import Aaa from './md/aaa.md';
 </script>
 
 <template>
   <div>
-    <Markdown src="./md/aaa.md" />
-    <Markdown src="./md/aaa.md"></Markdown>
-    <Markdown src="./md/bbbb.md" />
+    <Aaa />
   </div>
   <HelloWorld msg="Vite + Vue" />
 </template>
