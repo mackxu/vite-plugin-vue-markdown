@@ -5,6 +5,8 @@ import HelloWorld from './components/HelloWorld.vue';
 <template>
   <div>
     <Markdown src="./md/aaa.md" />
+    <Markdown src="./md/aaa.md"></Markdown>
+    <Markdown src="./md/bbbb.md" />
   </div>
   <HelloWorld msg="Vite + Vue" />
 </template>

@@ -1,11 +1,7 @@
 <template>
-  <markdown :src="src"></markdown>
+  <markdown src="../md/bbbb.md"></markdown>
 </template>
 
-<script setup lang="ts">
-const { src } = defineProps<{
-  src: string;
-}>();
-</script>
+<script setup lang="ts"></script>
 
 <style></style>
