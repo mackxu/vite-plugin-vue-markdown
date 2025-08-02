@@ -23,9 +23,17 @@ export default defineConfig({
 
 ## 示例
 
+### md 文件
+
+```markdown
+title: {{ title }}
+```
+
+### 在 vue 文件使用 md 文件
+
 ```vue
 <template>
-  <MyMarkdown />
+  <MyMarkdown title="hello" />
 </template>
 
 <script setup lang="ts">

@@ -1,11 +1,14 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import HelloWorld from './components/HelloWorld.vue';
 import Aaa from './md/aaa.md';
+
+const aaa = ref({ title: 'good work' });
 </script>
 
 <template>
   <div>
-    <Aaa />
+    <Aaa :aaa="aaa" bbb="123" />
   </div>
   <HelloWorld msg="Vite + Vue" />
 </template>

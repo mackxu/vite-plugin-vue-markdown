@@ -14,7 +14,14 @@ export function transformMarkdown(options: MarkdownPluginOptions) {
 
   return async (code: string) => {
     const md = await setupPromise;
+    code = processTemplateVariable(code);
     const html = await md.renderAsync(code);
     return `<template>${html}</template>`;
   };
+}
+
+const TMPL_VAR_RG = /\{\{\s+([\w$]+(?:\??\.[\w$]+)*)\s+\}\}/g;
+
+function processTemplateVariable(code: string) {
+  return code.replace(TMPL_VAR_RG, '{{$attrs.$1}}');
 }
