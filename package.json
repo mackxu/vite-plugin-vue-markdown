@@ -21,9 +21,10 @@
     "markdown"
   ],
   "license": "MIT",
+  "homepage": "https://github.com/mackxu/vite-plugin-vue-markdown",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mackxu/vite-plugin-vue-markdown"
+    "url": "https://github.com/mackxu/vite-plugin-vue-markdown.git"
   },
   "scripts": {
     "dev": "vite",
